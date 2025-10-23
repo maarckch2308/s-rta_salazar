@@ -8,7 +8,8 @@
     body {
       margin: 0;
       height: 100vh;
-      background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+      background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXQxaGJoN24xd2dmbzh0b2V5MDU5bnFrNjI0MHk4enljbGs4ZjhnNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/O1MMeR1TmMmOsoKtaG/giphy.gif') 
+                  center center / cover no-repeat;
       overflow: hidden;
       font-family: 'Arial', sans-serif;
       position: relative;
@@ -75,7 +76,7 @@
       word.style.color = colors[Math.floor(Math.random() * colors.length)];
 
       // Tamaño aleatorio
-      word.style.fontSize = (16 + Math.random() * 30) + 'px';
+      word.style.fontSize = (16 + Math.random() * 50) + 'px';
 
       document.body.appendChild(word);
 
