@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holaaa</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      z-index: 1;
+      text-align: center;
+    }
+
+    .word {
+      position: absolute;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      opacity: 0;
+      animation: floatWord 4s linear forwards;
+      pointer-events: none;
+    }
+
+    @keyframes floatWord {
+      0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Hola </h1>
+
+  <script>
+    const palabras = ["A ver una sonrisita", "Pq tas serias", "Preciososota", "Eres increíble", "besito?", "Un besito?", "O dos besitos?"];
+
+    function crearPalabra() {
+      const word = document.createElement('div');
+      word.classList.add('word');
+
+      // Selecciona palabra aleatoria
+      word.textContent = palabras[Math.floor(Math.random() * palabras.length)];
+
+      // Posición aleatoria horizontal
+      word.style.left = Math.random() * 90 + 'vw';
+
+      // Color aleatorio suave
+      const colors = ["#B22222", "#8B0000", "#4B0082", "#2F4F4F", "#800000"];
+      word.style.color = colors[Math.floor(Math.random() * colors.length)];
+
+      // Tamaño aleatorio
+      word.style.fontSize = (16 + Math.random() * 30) + 'px';
+
+      document.body.appendChild(word);
+
+      // Eliminar después de la animación
+      setTimeout(() => {
+        word.remove();
+      }, 4000);
+    }
+
+    // Crear palabras cada 500ms
+    setInterval(crearPalabra, 500);
+  </script>
+
+</body>
+</html>
